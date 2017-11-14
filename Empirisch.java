@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Empirisch {
 
-    private final int numberSpace = 1000;
-    private final int initArraySize = 10000;
-    private final int maxSizeMultiplyer = 1;
+    private final int numberSpace = 1000; //Range for diff between numbers in ASC and DESC
+    private final int initArraySize = 10000; 
+    private final int maxSizeMultiplyer = 10; // Benchamrks go: initArraySize * 1, initArraySize * 2, initArraySize * 3 .... initArraySize * maxSizeMultiplyer
     private final int avgs = 3;
 
     private static ExcelExport ee;
