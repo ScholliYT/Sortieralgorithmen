@@ -1,0 +1,51 @@
+public class Sortieren {
+  public static void main(String[] args) {
+    new Sortieren();
+  }
+
+  public Sortieren() {
+    int[] liste = { 12, 17, 23, 5, 9, 13 };
+    selectionSort(liste);
+    for (int i = 0; i < liste.length; i++) {
+      System.out.print(liste[i] + " ");
+    }
+    System.out.println();
+    System.out.println();
+    
+    int[] testliste = { 12, 17, 23, 5, 9, 13, 123,345,1,313,25,235,6,2345,2,245,2,1,3,234,5,2,56,4536,8,687,34,4,43,3456,34562,5634,3,56,8,876,9,567,456,356,7,654,7,4,3456,37564,346,73,346,73456,346,78,42,52,25,6,2345,23,45,7,657,8,9,100,33 };
+    selectionSort(testliste);
+    for (int i = 0; i < testliste.length; i++) {
+      System.out.print(testliste[i] + " ");
+    }
+    System.out.println();
+    System.out.println();
+  }
+
+  private void selectionSort(int[] _liste) {
+    int n = _liste.length;
+    int i = 0;
+    int minID = 0;
+
+    while (i < (n - 1)) {
+      int j = i + 1;
+      minID = i;
+
+      while (j < n) {
+        if (_liste[j] < _liste[minID]) {
+          minID = j;
+        }
+
+        j++;
+      }
+
+      swap(_liste, i, minID);
+      i++;
+    }
+  }
+
+  private void swap(int[] _liste, int a, int b) {
+    int temp = _liste[a];
+    _liste[a] = _liste[b];
+    _liste[b] = temp;
+  }
+}
