@@ -467,7 +467,7 @@ public class Empirisch {
             }
             if(i <= j) {
                 swap(_liste, i, j);
-                i++; //Läuft in manchen fällen out of index
+                i++;
                 j--;
             }
         }
