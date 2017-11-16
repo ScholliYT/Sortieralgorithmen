@@ -14,6 +14,6 @@ public class MeasurementResults {
 	@Override
 	public String toString() {
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
-		return "Time: " + nf.format(time) + "ms\nComparisons: " + nf.format(comparisons) + "\nSwaps: " + nf.format(swaps);
+		return "Time: " + nf.format(time/1000000) + "ms\nTime: " + nf.format(time) + "ns\nComparisons: " + nf.format(comparisons) + "\nSwaps: " + nf.format(swaps);
 	}
 }

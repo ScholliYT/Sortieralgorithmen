@@ -1,7 +1,7 @@
 import java.util.*;
 import java.text.NumberFormat;
 public class SortAlgorithmsAnalyse {
-	private final int ARRAY_SIZE = 100_000_000;
+	private final int ARRAY_SIZE = 500_000_000;
 
 	public static void main(String[] args) {
 		new SortAlgorithmsAnalyse();
@@ -9,18 +9,21 @@ public class SortAlgorithmsAnalyse {
 
 	public SortAlgorithmsAnalyse() {
 		final int[] list = new int[ARRAY_SIZE];
+
 		ArrayList<ListGenerator> listGenerators = new ArrayList<>();
-		//listGenerators.add(new ASCListGenerator());
-		//listGenerators.add(new DESCListGenerator());
+		listGenerators.add(new ASCListGenerator());
+		listGenerators.add(new DESCListGenerator());
 		listGenerators.add(new RNDListGenerator());
+		//listGenerators.add(new StaticListGenerator());
 
 		ArrayList<MeasurableSortingAlgorithm> algorithms = new ArrayList<>();
 		//algorithms.add(new SelectionSort());
 		//algorithms.add(new BubbleSort());
 		//algorithms.add(new InsertionSort());
-		algorithms.add(new QuickSort());
-		algorithms.add(new QuickSortOptimized());
-
+		//algorithms.add(new QuickSortFirstPivot());
+		algorithms.add(new QuickSortMidPivot());
+		algorithms.add(new QuickSortMidPivotWithInsertionSort());
+		algorithms.add(new QuickSortOptimizedMultithread());
 
 
 		for(ListGenerator listGenerator : listGenerators) {

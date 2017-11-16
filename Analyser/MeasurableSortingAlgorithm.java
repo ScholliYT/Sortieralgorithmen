@@ -1,12 +1,12 @@
 public abstract class MeasurableSortingAlgorithm extends SortingAlgorithm {
-    protected long comparisons;
-    protected long swaps;
+    protected static long comparisons;
+    protected static long swaps;
 
     public MeasurementResults measure(int[] _list) {
         resetConters();
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         sort(_list);
-        long time = System.currentTimeMillis() - start;
+        long time = System.nanoTime() - start;
         return new MeasurementResults(time, comparisons, swaps);
     }
 
